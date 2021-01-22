@@ -80,23 +80,23 @@ PostOffice/NH (NBLicense_Num, BranchNum)
 >Foreign Key(NBLicense_Num) references RetailStore(BLicense_Num)   
 
 SalesHistory(HIR_Num, Full_Name, BLicense_Num, DateOfPurchase, QuantityPurchased)   
->Foreign Key(HIR_Num) references Customer(HIR_Num)
->Foreign Key(Full_Name) references Customer(Full_Name)
->Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)
+>Foreign Key(HIR_Num) references Customer(HIR_Num)   
+>Foreign Key(Full_Name) references Customer(Full_Name)   
+>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)   
 
->>PPS : Public Procurement Service(조달청)
->>Local_PPS : Local Procurement Agency
->>Qunatity_Avail : Public Procurement Service Quantity
->>Accum_Volume : Accumulated receiving volume
+>>PPS : Public Procurement Service(조달청)   
+>>Local_PPS : Local Procurement Agency   
+>>Qunatity_Avail : Public Procurement Service Quantity   
+>>Accum_Volume : Accumulated receiving volume   
 
 PPS (Local_PPS, PAddress, PContact_Num, Quantity_Avail, Accum_Volume)   
->>WOG : Warehousing of Goods
-RetailStore_WOG (BLicense_Num, Local_PPS, DateReceived, QuantityReceived )   
+>>WOG : Warehousing of Goods   
+
+RetailStore_WOG (BLicense_Num, Local_PPS, DateReceived, QuantityReceived )    
 >Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)   
 >Foreign Key(Local_PPS) references PPS(Local_PPS )   
 
-
->>MFDS_Approval : Ministry of Food and Drug Safety Approval(식약처인증여부)
+>>MFDS_Approval : Ministry of Food and Drug Safety Approval(식약처인증여부)   
 
 Manufacturer (Manufacturer_ID, MName, MAddress, MContact_Num, MFDS_Approval)   
 
