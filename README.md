@@ -111,16 +111,28 @@ Employee (Employee_ID, BLicense_Num, EmpName, PhoneNum, WorkingDay_Code)
 (Sunday : 1, Monday : 2, Tuesday : 3, Wednesday : 4, Thursday : 5, Friday : 6, Saturday : 7)   
 
 - 1, 2 : Seoul, Busan, Daejeon 중 하나를 입력한다. 영어로 입력해야하고, 대소문자 구분이 없다.   
+Enter one of the values in (Seoul, Busan, Daejeon). Input should be entered in English. Case insensitive   
 
-- 3 : 샘플 데이터(full_name = ‘sample’, hir_num = '74125896325') 구매 가능 코드를 1 (일요일)에 설정한 상태이다.
-SQL을 일요일에 실행한다면 변화가 생기는 샘플 레코드가 1개 생기게 된다.
-나머지 월~토요일에는 조건을 만족하는 Record가 존재하지 않아 수정되는 레코드는 0개가 된다.
-두 비교를 위해 조건문 두 개를 주석처리 하였음.
+- 3 : 샘플 데이터(full_name = ‘sample’, hir_num = '74125896325') 구매 가능 코드를 1 (일요일)에 설정한 상태이다.   
+SQL을 일요일에 실행한다면 변화가 생기는 샘플 레코드가 1개 생기게 된다.   
+나머지 월~토요일에는 조건을 만족하는 Record가 존재하지 않아 수정되는 레코드는 0개가 된다.   
+두 비교를 위해 조건문 두 개를 주석처리 하였음.   
+Enter sample data (full_name = ‘sample’, hir_num = '74125896325')   
+Daycode of this sample data is set on 1 (Sunday).   
+If you run this SQL on Sunday, 1 record will be modified.   
+Or on Mon ~ Sat, There is no record satisfying query's condition.   
+To compare those conditions, they are commented in the query.   
 
-- 5 : 한 테이블의 모든 Record를 전부 지우고, 다른 테이블의 모든 Record의 Attribute를 변경시키는 명령어이므로, 마지막에 수행한다.
+- 5 : 한 테이블의 모든 Record를 전부 지우고, 다른 테이블의 모든 Record의 Attribute를 변경시키는 명령어이므로, 마지막에 수행한다.   
+Those queries delete all sales history on Sunday.   
+Please make sure that this queries are executed in very last order.
 
 - 8 : 실험 예제 입력 값은 30181231231, hong soo hyuk.   
-영어로 입력해야 하며, 대소문자 구분이 없지만 띄어쓰기와 성명의 순서는 지켜져야한다.
+영어로 입력해야 하며, 대소문자 구분이 없지만 띄어쓰기와 성명의 순서는 지켜져야한다.   
+Sample input data : 30181231231, hong soo hyuk.   
+Name should be in english with not cencern about case sensitivity. But, please make sure you put lastname on the first.('hong' is lastname.)   
 
 - 9 : 샘플 입력 값은 30181231231, hong dependent2
-영어로 입력해야 하며, 대소문자 구분이 없지만 띄어쓰기와 성명의 순서는 지켜져야한다
+영어로 입력해야 하며, 대소문자 구분이 없지만 띄어쓰기와 성명의 순서는 지켜져야한다.   
+Sample input data : 30181231231, hong dependent2   
+Name should be in english with not cencern about case sensitivity. But, please make sure you put lastname on the first.('hong' is lastname.)
