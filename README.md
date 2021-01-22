@@ -1,5 +1,7 @@
 # Database-for-5day-Rotation
 COVID-19 마스크 5부제 운영을 위한 데이터베이스.   
+I used Oracle Database 11g Express Edition Release 11.2.0.2.0 - 64bit Production for this project.
+
 2020년도 - 2학기 명지대학교 응용소프트웨어 전공 "DB설계 및 구현2" 그룹 프로젝트   
 그룹원 : 강다교, 김자윤, 양지선, 홍수혁(본인)
 
