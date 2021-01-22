@@ -4,7 +4,7 @@ COVID-19 마스크 5부제 운영을 위한 데이터베이스.
 그룹원 : 강다교, 김자윤, 양지선, 홍수혁(본인)
 
 ## Purpose with the database of the project
-코로나의 전파를 막기 위해 마스크의 공급이 중요해지면서, 일정 수량을 모든 사람들에게 원활히 공급하고 일정 기간 동안의 중복적인 구매를 막는 시스템의 도움이 필요하다.   
+코로나의 전파를 막기 위해 마스크의 공급이 중요해지면서, 일정 수량을 모든 사람들에게 원활히 공급하고 일정 기간 동안의 중복적인 구매를 막는 시스템의 도움이 필요한 상황이다.   
 
 소비자가 각 소매점의 재고량을 파악할 수 있고, 필요 이상의 구매를 막아 사재기를 예방할 수 있다.   
 이를 위해, 공급 판매 과정에서 소비자의 구매 이력을 남기고, 약국의 지점마다 재고를 파악하기 위한 데이터베이스를 구축한다.
@@ -52,60 +52,60 @@ COVID-19 마스크 5부제 운영을 위한 데이터베이스.
 Customer (HIR_Num, Full_Name, PhoneNum, Address, WeeklyQuantity, DayCode)   
 
 Representative (GHIR_Num, DHIR_Num, GFull_Name, DFull_Name, Relationship)   
-	>Foreign Key(GHIR_Num) references Customer(HIR_Num)   
-	>Foreign Key(DHIR_Num) references Customer(HIR_Num)   
-	>Foreign Key(GFull_Name) references Customer(GFull_Name)   
-	>Foreign Key(DFull_Name) references Customer(DFull_Name)   
+>Foreign Key(GHIR_Num) references Customer(HIR_Num)   
+>Foreign Key(DHIR_Num) references Customer(HIR_Num)   
+>Foreign Key(GFull_Name) references Customer(GFull_Name)   
+>Foreign Key(DFull_Name) references Customer(DFull_Name)   
 
 >>SSN : Social Security Number (주민등록번호)   
 
 Resident (HIR_Num, SSN, ResidentFull_Name)   
-	>Foreign Key(HIR_Num) references Customer(HIR_Num)   
-	>Foreign Key(ResidentFull_Name) references Customer(Full_Name)
+>Foreign Key(HIR_Num) references Customer(HIR_Num)   
+>Foreign Key(ResidentFull_Name) references Customer(Full_Name)
 
 >>FRegistrantion_Num : Resident registration number   
 
 Foreigner (FHIR_Num, FRegistration_Num, ForeignFull_Name)   
-	>Foreign Key(FHIR_Num) references Customer(HIR_Num)   
-	>Foreign Key(ForeignFull_Name) references Customer(Full_Name)   
+>Foreign Key(FHIR_Num) references Customer(HIR_Num)   
+>Foreign Key(ForeignFull_Name) references Customer(Full_Name)   
 
 >>BLicesnse_Num : Business license number   
 
 RetailStore (BLicense_Num, City, Street, DetailAddress, Contact_Num, OnHand)   
 
 Pharmacy (PBLicense_Num, InstitutionNum)   
-	>Foreign Key(PBLicense_Num) references RetailStore(BLicense_Num)   
+>Foreign Key(PBLicense_Num) references RetailStore(BLicense_Num)   
 
 PostOffice/NH (NBLicense_Num, BranchNum)   
-	>Foreign Key(NBLicense_Num) references RetailStore(BLicense_Num)   
+>Foreign Key(NBLicense_Num) references RetailStore(BLicense_Num)   
 
 SalesHistory(HIR_Num, Full_Name, BLicense_Num, DateOfPurchase, QuantityPurchased)   
-	>Foreign Key(HIR_Num) references Customer(HIR_Num)
-	>Foreign Key(Full_Name) references Customer(Full_Name)
-	>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)
+>Foreign Key(HIR_Num) references Customer(HIR_Num)
+>Foreign Key(Full_Name) references Customer(Full_Name)
+>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)
 
-	>>PPS : Public Procurement Service(조달청)
-	>>Local_PPS : Local Procurement Agency
-	>>Qunatity_Avail : Public Procurement Service Quantity
-	>>Accum_Volume : Accumulated receiving volume
+>>PPS : Public Procurement Service(조달청)
+>>Local_PPS : Local Procurement Agency
+>>Qunatity_Avail : Public Procurement Service Quantity
+>>Accum_Volume : Accumulated receiving volume
 
 PPS (Local_PPS, PAddress, PContact_Num, Quantity_Avail, Accum_Volume)   
-	>>WOG : Warehousing of Goods
+>>WOG : Warehousing of Goods
 RetailStore_WOG (BLicense_Num, Local_PPS, DateReceived, QuantityReceived )   
-	>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)   
-	>Foreign Key(Local_PPS) references PPS(Local_PPS )   
+>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)   
+>Foreign Key(Local_PPS) references PPS(Local_PPS )   
 
 
-	>>MFDS_Approval : Ministry of Food and Drug Safety Approval(식약처인증여부)
+>>MFDS_Approval : Ministry of Food and Drug Safety Approval(식약처인증여부)
 
 Manufacturer (Manufacturer_ID, MName, MAddress, MContact_Num, MFDS_Approval)   
 
 SupplyHistory (Local_PPS, Manufacturer_ID, DateOfSupply, QuantitySupplied)   
-	>Foreign Key(Local_PPS) references PPS(Local_PPS )   
-	>Foreign Key(Manufacturer_ID) references Manufacturer(Manufacturer_ID)   
+>Foreign Key(Local_PPS) references PPS(Local_PPS )   
+>Foreign Key(Manufacturer_ID) references Manufacturer(Manufacturer_ID)   
 
 Employee (Employee_ID, BLicense_Num, EmpName, PhoneNum, WorkingDay_Code)   
-	>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)
+>Foreign Key(BLicense_Num) references RetailStore(BLicense_Num)
 
 ## How To Use 10 useful queries.
 (Sunday : 1, Monday : 2, Tuesday : 3, Wednesday : 4, Thursday : 5, Friday : 6, Saturday : 7)   
