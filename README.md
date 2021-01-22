@@ -28,5 +28,5 @@ COVID-19 마스크 5부제 운영을 위한 데이터베이스.
 각 조달청은 여러 개의 생산업체로부터 마스크를 제공받으며, 생산업체는 여러 지역의 조달청에 마스크를 공급할 수 있다. 모든 생산업체는 반드시 한번 이상의 공급을 해야하지만, 조달청은 반드시 공급 기록이 존재해야 하는 것은 아니다. 생산업체가 조달청에 마스크를 공급할 때 공급 날짜와, 공급 수량 또한 기록한다.
 
 ## Conceptual Design (Entity-Relationship Diagram)
-https://user-images.githubusercontent.com/63241308/105462617-38288800-5cd2-11eb-9f82-4ad9ed7df924.jpg
+![ERDiagram-for-requirement](https://user-images.githubusercontent.com/63241308/105463347-475c0580-5cd3-11eb-8d1c-a9df165e1e9b.jpg)
 
